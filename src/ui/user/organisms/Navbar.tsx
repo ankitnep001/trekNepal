@@ -15,14 +15,14 @@ const Navbar = () => {
   return (
     <nav className=" w-full flex flex-row items-center justify-around bg-black px-1 md:px-8 py-3 md:py-5 gap-x-5 ">
       <Logo />
-      <div className="hidden md:flex flex-row gap-x-10">
+      <div className="hidden md:flex flex-row  gap-x-10">
         <NavMenu />
         <SearchBar />
         <NavbarIcons />
       </div>
 
       {/* mobile menu icon */}
-      <div className="block md:hidden absolute right-0.5 z-50">
+      <div className="md:block lg:hidden absolute right-0.5 z-50">
         <button onClick={toggleMenu}>
           {isMenuOpen ? <X color="white" /> : <MenuIcon color="white" />}
         </button>

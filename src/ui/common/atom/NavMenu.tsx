@@ -7,7 +7,7 @@ interface MenuProps {
 const NavMenu = ({ flexRow = true }: MenuProps) => {
   return (
     <ul
-      className={`flex ${
+      className={`md:hidden lg:flex ${
         flexRow ? "flex-row gap-x-10" : "flex-col gap-y-10"
       } justify-center items-center text-xl text-white `}
     >
