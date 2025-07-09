@@ -2,22 +2,25 @@ import { navbarMenu } from "@data/navbarMenu";
 
 interface MenuProps {
   flexRow?: boolean;
+  showSubMenu?: boolean;
 }
 
-const NavMenu = ({ flexRow = true }: MenuProps) => {
+const NavMenu = ({ flexRow = true, showSubMenu = true }: MenuProps) => {
   return (
     <ul
       className={`md:hidden lg:flex ${
-        flexRow ? "flex-row gap-x-10" : "flex-col gap-y-10"
-      } justify-center items-center text-xl text-white `}
+        flexRow ? "flex-row gap-x-10" : "flex-col gap-y-8"
+      } justify-center items-center text-xl text-white  `}
     >
       {navbarMenu.map((item, index) => (
-        <li key={index} className="relative group cursor-pointer">
-          <button className="transition duration-200 ">{item.label}</button>
+        <li key={index} className="relative group ">
+          <button className="transition duration-200 cursor-pointer">
+            {item.label}
+          </button>
 
-          {/* Submenu dropdown */}
-          {item.subMenu && (
-            <ul className="absolute  top-full  bg-black text-white rounded-md shadow-md w-48 py-2 hidden group-hover:block z-50">
+          {/*Render submenu only if showSubMenu is true */}
+          {showSubMenu && item.subMenu && (
+            <ul className="absolute top-full bg-black text-white rounded-md shadow-md w-48 py-2 hidden group-hover:block z-50">
               {item.subMenu.map((subItem, subIndex) => (
                 <li
                   key={subIndex}
