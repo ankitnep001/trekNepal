@@ -1,5 +1,5 @@
 import NavbarLoginIcon from "../atom/NavbarIcons";
-import NavMenu from "../atom/NavMenu";
+import ResponsiveNavMenu from "../atom/ResponsiveNavMenu";
 import Logo from "../molecules/Logo";
 
 const ResponsiveMenu = () => {
@@ -9,7 +9,7 @@ const ResponsiveMenu = () => {
       <div className="flex flex-col gap-y-20">
         <Logo />
 
-        <NavMenu flexRow={false} />
+        <ResponsiveNavMenu />
       </div>
     </div>
   );
